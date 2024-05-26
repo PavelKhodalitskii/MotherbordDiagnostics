@@ -323,8 +323,7 @@ namespace MotherbordDia
             var yesButton = MainGrid.Children.OfType<Button>().FirstOrDefault(b => b.Name == "yesButton");
             var noButton = MainGrid.Children.OfType<Button>().FirstOrDefault(b => b.Name == "noButton");
             MainGrid.Children.Remove(yesButton);
-            MainGrid.Children.Remove(noButton);
-            selectedInstrumentText.Text = "Я вообще то удалил";
+            MainGrid.Children.Remove(noButton);            
         }
 
         private void SuccessAnswerIfWorks(object sender, RoutedEventArgs e)
@@ -333,8 +332,7 @@ namespace MotherbordDia
             var yesButton = MainGrid.Children.OfType<Button>().FirstOrDefault(b => b.Name == "yesButton");
             var noButton = MainGrid.Children.OfType<Button>().FirstOrDefault(b => b.Name == "noButton");
             MainGrid.Children.Remove(yesButton);
-            MainGrid.Children.Remove(noButton);
-            selectedInstrumentText.Text = "Я вообще то удалил";
+            MainGrid.Children.Remove(noButton);            
         }
 
         private void UnsuccessAnswer(object sender, RoutedEventArgs e)
@@ -343,8 +341,7 @@ namespace MotherbordDia
             var yesButton = MainGrid.Children.OfType<Button>().FirstOrDefault(b => b.Name == "yesButton");
             var noButton = MainGrid.Children.OfType<Button>().FirstOrDefault(b => b.Name == "noButton");
             MainGrid.Children.Remove(yesButton);
-            MainGrid.Children.Remove(noButton);
-            selectedInstrumentText.Text = "Я вообще то удалил";
+            MainGrid.Children.Remove(noButton);            
         }
 
         private void CreateYesAndNoButtons(int offset, bool yesIsRight, bool isBroken)
