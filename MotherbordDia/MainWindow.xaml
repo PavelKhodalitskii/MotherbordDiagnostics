@@ -1,17 +1,42 @@
-﻿<Window x:Class="MotherbordDia.MainWindow"
+﻿<Window x:Name="accessWindow" x:Class="MotherbordDia.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MotherbordDia"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Image Margin="-8,66,409,25" Source="/19046.png" Stretch="Fill"/>
-        <Button x:Name="Южный_мост" Content="Южный&#xD;&#xA;мост" HorizontalAlignment="Left" Margin="260,329,0,0" VerticalAlignment="Top" Height="48" Width="47" Click="Button_Click"/>
-        <Button Content="Включить" HorizontalAlignment="Center" Height="31" Margin="0,77,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click_1"/>
-        <Button Content="Мультиметр" HorizontalAlignment="Left" Height="52" Margin="532,10,0,0" VerticalAlignment="Top" Width="98"/>
-        <Button Content="Осцилограф" HorizontalAlignment="Left" Margin="645,10,0,0" VerticalAlignment="Top" Click="Button_Click_2" Height="52" Width="97"/>
-        <TextBlock HorizontalAlignment="Left" Height="58" Margin="532,92,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="210"/>
+        Title="Диагностика Материнской Платы" Height="677" Width="1200" Icon="/Images/19046.png" ResizeMode="CanResizeWithGrip" SizeToContent="Manual">
+    <Grid x:Name="MainGrid" RenderTransformOrigin="0.5,0.5" Margin="0,0,0,0">
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform/>
+                <RotateTransform Angle="0"/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </Grid.RenderTransform>
+        <Image Width="568" Height="477" x:Name="MotherBoardImage" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,76,0,0" Source="Images/19046.png" Stretch="Uniform" Grid.RowSpan="2"/>
+        <Rectangle x:Name="Header2" HorizontalAlignment="Center" Height="65" Margin="0,0,0,0" VerticalAlignment="Top" Fill="#FF003AFF" Width="1200" Grid.RowSpan="2"/>
+        <TextBlock HorizontalAlignment="Left" Margin="40, 15,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="44" Width="480" FontWeight="Bold" FontSize="25" Grid.RowSpan="2"><Run Text="Диагно"/><Run Language="ru-ru" Text="с"/><Run Text="тик"/><Run Language="ru-ru" Text="а материнской платы"/></TextBlock>
+
+        <Button x:Name="Oscilloscope" Content="Осцилограф" Opacity="0.7" HorizontalAlignment="Right" Margin="0,15,225,0" VerticalAlignment="Top" Height="31" Width="100" Grid.RowSpan="2"/>
+        <Button x:Name="Multimetr" Content="Мультиметр" Opacity="0.7" HorizontalAlignment="Right" Height="31" Margin="0,15,116,0" VerticalAlignment="Top" Width="100" Grid.RowSpan="2"/>
+        <Button x:Name="Voltage" Content="Вольтметр" Opacity="0.7" Visibility="Visible" HorizontalAlignment="Right" Height="20" Margin="0,50,71,0" VerticalAlignment="Top" Width="90" Grid.RowSpan="2"/>
+        <Button x:Name="Oms" Content="Омметр" Opacity="0.7" Visibility="Visible" HorizontalAlignment="Right" Height="20" Margin="0,50,166,0" VerticalAlignment="Top" Width="90" Grid.RowSpan="2"/>
+        <Button x:Name="PciTester" Content="PCI POST" Opacity="0.7" HorizontalAlignment="Right" Height="30" Margin="0,15,10,0" VerticalAlignment="Top" Width="100" Grid.RowSpan="2"/>
+        <Button x:Name="SoketTester" Content="Socket тестер" Opacity="0.7" Height="31" Margin="0,15,335,0" HorizontalAlignment="Right" VerticalAlignment="Top" Grid.RowSpan="2"/>
+        <Button x:Name="RamTester" Content="RAM тестер" Opacity="0.7" Height="31" Margin="0,15,425,0" HorizontalAlignment="Right" VerticalAlignment="Top" Grid.RowSpan="2"/>
+
+        <Button x:Name="RAM" Content="Оперативная&#xA;память" Opacity="0.7" HorizontalAlignment="Left" Height="257" Margin="374,116,0,0" VerticalAlignment="Top" Width="62" Grid.RowSpan="2"/>
+        <Button x:Name="Line33"  Content="3.3V" Opacity="0.7" HorizontalAlignment="Left" Height="21" Margin="460,182,0,0" VerticalAlignment="Top" Width="31" Grid.RowSpan="2"/>
+        <Button x:Name="Line5" Content="5V" Opacity="0.7" HorizontalAlignment="Left" Height="22" Margin="460,218,0,0" VerticalAlignment="Top" Width="31" Grid.RowSpan="2"/>
+        <Button x:Name="Line12" Content="12V" Opacity="0.7" HorizontalAlignment="Left" Height="21" Margin="460,251,0,0" VerticalAlignment="Top" Width="31" Grid.RowSpan="2"/>
+        <Button x:Name="Usb" Content="USB" Opacity="0.7" HorizontalAlignment="Left" Height="43" Margin="75,311,0,0" VerticalAlignment="Top" Width="44" Grid.RowSpan="2"/>
+        <Button x:Name="PCIe" Content="PCIe" Opacity="0.7" HorizontalAlignment="Left" Height="19" Margin="167,427,0,0" VerticalAlignment="Top" Width="180" Grid.RowSpan="2"/>
+        <Button x:Name="Soket" Content="Сокет" Opacity="0.7" HorizontalAlignment="Left" Height="85" Margin="238,197,0,0" VerticalAlignment="Top" Width="91" RenderTransformOrigin="0.495,0.524" Grid.RowSpan="2"/>
+        <Button x:Name="Bios" Content="BIOS" Opacity="0.7" HorizontalAlignment="Left" Height="17" Margin="207,354,0,0" VerticalAlignment="Top" Width="32" RenderTransformOrigin="2.312,4.355" Grid.RowSpan="2"/>
+        <Button x:Name="Battery" Content="Battery" Opacity="0.7" HorizontalAlignment="Left" Height="38" Margin="223,451,0,0" VerticalAlignment="Top" Width="40" Grid.RowSpan="2"/>
+        <TextBlock x:Name="selectedInstrumentText" HorizontalAlignment="Right" Margin="0,99,10,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="33" Width="272" FontSize="20" FontWeight="Bold" Grid.RowSpan="2"/>
+        <TextBlock x:Name="questionText" HorizontalAlignment="Right" Margin="0,137,10,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="55" Width="364" Grid.RowSpan="2"/>
     </Grid>
 </Window>
